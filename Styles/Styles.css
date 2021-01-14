@@ -1,0 +1,236 @@
+/* ################################################ Root Variables Style Start ############# */
+/* ------- Root Variable Values -------*/
+:root {
+	/* Font Family. */
+	--font-face: 'Nova Mono', monospace;
+	--font-main-size: 12px;
+	--font-small-size: 0.8em;
+	/* Background Colours. */
+	--header-bg: lightcoral;
+	--nav-bg: rgb(255, 235, 171);
+	--main-bg: lightgreen;
+	--aside-bg: lightblue;
+	--footer-bg: gray;
+	--main-font: darkslateblue;
+	--dark-blues: darkblue;
+	--test-color: darkred;
+	/* Width For Elements. */
+	--body-width: 1920px;
+	/* Item Card Style. */
+	--card-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	--card-shadow-hover: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+body {
+	color: var(--test-color)!important;
+	font-size: var(--font-main-size);
+	font-family: var(--font-face);
+	box-sizing: border-box;
+	width: var(--body-width);
+}
+/* ################################################ Root Variables Style End ############# */
+/* ################################################ Base Page Style Start ############# */
+/* -------------------------- Main Grid Wrapper Style ------------- */
+.grid-wrapper {
+	max-width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, fr);
+	grid-gap: 0.2em;
+	grid-template-areas: 
+		"header header header header"
+		"nav nav nav nav"
+		"main main main main"
+		"section section section section"
+		"footer footer footer footer";
+}
+/* -------------------------- Header Style ------------- */
+header {
+	background: var(--header-bg);
+	width: 100%;
+	height: 60px;
+	grid-area: header;
+	justify-content: space-around;
+    align-items: center;
+	display: grid;
+	grid-template-columns: repeat(4, fr);
+	grid-template-rows: auto;
+	grid-gap: 3px;
+	grid-template-areas: "phone email lang search";
+}
+header .iconed-email {
+	grid-area: email;
+}
+header .iconed-phone {
+	grid-area: phone;
+}
+header .flagged-lamguage {
+	grid-area: lang;
+}
+header .iconed-search {
+	grid-area: search;
+}
+header div a, header div i {
+	font-size: var(--font-small-size);
+	text-decoration: none;
+	color: var(--test-color);		
+}
+.select-btn {
+	background: var(--main-bg);
+}
+.value-selector {
+	position: relative;
+	display: inline-block;
+}
+.values-content {
+	display: none;
+	position: absolute;
+	min-width: 50px;
+	z-index: 1;
+	background: var(--header-bg);
+}
+.value-selector:hover .values-content {
+	display: block;
+}
+.values-content a {
+	display: block;
+}
+.iconed-search{
+	color: var(--test-color);
+}
+/* -------------------------- Nav Bar Style ------------- */
+nav {
+	background: var(--nav-bg);
+	width: 100%;
+	height: 80px;
+	justify-content: space-around;
+	align-items: center;
+	grid-area: nav;
+	display: grid;
+	grid-template-columns: repeat(3, fr);
+	grid-template-rows: auto;
+	grid-gap: 3px;
+	grid-template-areas: "logo links accounts";
+}
+.nav-img {
+	grid-area: logo;
+}
+.nav-links {
+	grid-area: links
+}
+.nav-accounts {
+	grid-area: accounts;
+}
+.nav-img img {
+	width: 70px;
+}
+.nav-links a {
+	margin: 1rem;
+}
+/* -------------------------- Section Subscribe Style ------------- */
+section {
+	background: var(--aside-bg);
+	width: 100%;
+	height: 60px;
+	grid-area: section;
+	justify-content: space-evenly;
+    align-items: center;
+	display: grid;
+	grid-template-columns: repeat(2, fr);
+	grid-template-rows: auto;
+	grid-gap: 3px;
+	grid-template-areas: "subscribe subtext";
+}
+.iconed-subscribe {
+	grid-area: subscribe;
+	text-align: center;
+}
+.text-subscribe {
+	grid-area: subtext;
+}
+/* -------------------------- Footer Style ------------- */
+footer {
+	background: var(--footer-bg);
+	width: 100%;
+	height: 40px;
+	grid-area: footer;
+	display: grid;
+	justify-content: space-around;
+	align-items: center;
+	grid-template-columns: repeat(3, fr);
+	grid-template-rows: auto;
+	grid-gap: 3px;
+	grid-template-areas: "paymentcards copyright socialmedia";
+}
+.copyrights {
+	grid-area: copyright;
+	/* Font Color Test. */
+	color: var(--test-color);
+}
+.social-media {
+	grid-area: socialmedia;
+	/* Font Color Test. */
+	color: var(--test-color);
+}
+.payment-cards {
+	grid-area: paymentcards;
+	/* Font Color Test. */
+	color: var(--test-color);
+}
+/* ################################################ Base Page Style End ############# */
+/* ################################################ Collection Products Page Start ############# */
+/* -------------------------- Main Style ------------- */
+main {
+	background: var(--main-bg);
+	width: 100%;
+	height: 100vh;
+	box-sizing: border-box;
+	grid-area: main;
+	display: grid;
+	justify-content: space-evenly;
+    align-items: center;
+	text-align: center;
+	grid-template-columns: repeat(4, fr);
+	grid-template-rows: auto;
+	grid-gap: 3px;
+	grid-template-areas: 
+		"collectioname collectioname collectioname collectioname"
+		"filter filter sort sort"
+		"product product product product"
+		"pagination pagination pagination pagination";
+}
+.group-name {
+	grid-area: collectioname;
+}
+.group-filter {
+	grid-area: filter;
+}
+.group-sort {
+	grid-area: sort;
+}
+.group-pagination {
+	grid-area: pagination;
+}
+.group-products {
+	grid-area: product;
+	display: grid;
+	justify-content: space-evenly;
+    align-items: center;
+	text-align: center;
+	grid-template-columns: repeat(4, fr);
+	grid-template-rows: auto;
+	grid-gap: 0.1rem;
+	grid-template-areas: 
+	"card card card card";
+}
+.item-card {
+	box-shadow: var(--card-shadow);
+	transition: 0.3s;
+	box-sizing: border-box;
+	margin: 5px;
+}
+.item-card:hover {
+	box-shadow: var(--card-shadow-hover);
+}
+/* ################################################ Collection Products Page End ############# */
+/* ################################################ Product Information Page Start ############# */
+
+/* ################################################ Product Information Page End ############# */
